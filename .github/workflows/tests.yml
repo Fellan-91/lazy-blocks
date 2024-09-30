@@ -87,15 +87,6 @@ jobs:
           docker -v
           docker compose version
 
-      - name: General debug information
-        run: |
-          npm --version
-          node --version
-          curl --version
-          git --version
-          svn --version
-          locale -a
-
       - name: Start Docker environment
         run: npm run wp-env start
 
