@@ -42,11 +42,11 @@ jobs:
           rm versions.json
 
   test-php:
-    name: PHP ${{ matrix.php }}${{ matrix.wordpress != '' && format( ' (WP {0}) ', matrix.wordpress ) || '' }} on self-hosted
+    name: PHP ${{ matrix.php }}${{ matrix.wordpress != '' && format( ' (WP {0}) ', matrix.wordpress ) || '' }}
     needs: compute-previous-wordpress-version
     runs-on: self-hosted
     timeout-minutes: 20
-    if: ${{ github.repository == 'nk-crew/lazy-blocks' || github.event_name == 'pull_request' }}
+    if: ${{ github.repository == 'Fellan-91/lazy-blocks' || github.event_name == 'pull_request' }}
     strategy:
       fail-fast: true
       matrix:
@@ -159,7 +159,7 @@ jobs:
     name: Lint JS + CSS
     runs-on: self-hosted
     timeout-minutes: 20
-    if: ${{ github.repository == 'nk-crew/lazy-blocks' || github.event_name == 'pull_request' }}
+    if: ${{ github.repository == 'Fellan-91/lazy-blocks' || github.event_name == 'pull_request' }}
 
     steps:
       - uses: actions/checkout@v3
@@ -177,7 +177,7 @@ jobs:
     name: PHP coding standards
     runs-on: self-hosted
     timeout-minutes: 20
-    if: ${{ github.repository == 'nk-crew/lazy-blocks' || github.event_name == 'pull_request' }}
+    if: ${{ github.repository == 'Fellan-91/lazy-blocks' || github.event_name == 'pull_request' }}
 
     steps:
       - name: Checkout repository
